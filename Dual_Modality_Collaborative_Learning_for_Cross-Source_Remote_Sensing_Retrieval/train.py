@@ -231,7 +231,7 @@ for epoch in tqdm(range(6)):
             modelP.eval()
             modelS.eval()
 
-            val_acc = test_ap_map(modelM,modelP,modelS,W_m,W_m.inverse(),coffi,test_loader,625)#,modelW1,modelW2,modelG2,modelT, modelS,
+            val_acc = train_ap_map(modelM,modelP,modelS,W_m,W_m.inverse(),coffi,test_loader,625)#,modelW1,modelW2,modelG2,modelT, modelS,
             if (val_acc.map>map_best_acc):
                 map_best_acc = val_acc.map
 #                 ap_best_acc = val_acc.ap
